@@ -1,0 +1,25 @@
+<div *ngIf="selectedShoes">
+  <form id="form">
+    <input [(ngModel)]="selectedShoes.name" name="name" type="text" required id="name" placeholder="Name">
+    <input [(ngModel)]="selectedShoes.price" name="price" type="text" required id="price" placeholder="Price">
+    <input [(ngModel)]="selectedShoes.img" name="picture" type="text" required id="picture" placeholder="picture" style="width: 100%">
+    <input type="button" value="Add" (click)="addShoes(selectedShoes)">
+    <input type="button" value="Update" (click)="updateShoes(selectedShoes)">
+  </form>
+</div>
+<table id="customers">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let item of shoesLs, let i = index">
+    <td *ngIf="item">{{item.id}}</td>
+    <td *ngIf="item">{{item.name}}</td>
+    <td *ngIf="item"><img src={{item.img}} alt={{item.name}} width="100px" height="100px" (click)="selected(item)"></td>
+    <td *ngIf="item">{{item.price}}</td>
+    <td *ngIf="item"><input type="button" (click)="deleteShoes(i)" value="Delete" style="width:75%"></td>
+  </tr>
+</table>

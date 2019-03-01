@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<h2 style="text-align:center">Product Card</h2>
+
+<div class="card" *ngIf="detail">
+  <img src={{detail.img}} alt={{detail.name}} width="100%" height="100%">
+  <h1>{{detail.name}}</h1>
+  <p class="price">{{detail.price}}</p>
+  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  <p><button (click)="addToCart()">Add to Cart</button></p>
+</div>

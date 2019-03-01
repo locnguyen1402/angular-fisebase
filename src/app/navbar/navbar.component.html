@@ -1,0 +1,14 @@
+<ul>
+  <li><a class="active" href="/homepage">Home</a></li>
+  <li><a href="/crud">Admin</a></li>
+  <li><a href="/cart">Shopping Cart</a></li>
+  <ng-container *ngIf="username; else elseTemplate">
+    <li><a>Hello, {{username}}</a></li>
+    <li><button (click)="logout()">LogOut</button></li>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <li><a href="/auth/login">Login</a></li>
+    <li><a href="/auth/register">Register</a></li>
+  </ng-template>
+  
+</ul>

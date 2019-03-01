@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<h3>List Products</h3>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Add to cart</th>
+  </tr>
+  <tr *ngFor="let item of shoesLs, let i = index">
+    <td *ngIf="item">{{item.name}}</td>
+    <td *ngIf="item"><a href="/detail/{{item.id}}"><img src={{item.img}} alt={{item.name}} width="100px" height="100px"></a></td>
+    <td *ngIf="item">{{item.price}}</td>
+    <td *ngIf="item"><button (click)="addToCart(item,i)">Add to cart</button></td>
+  </tr>
+</table>

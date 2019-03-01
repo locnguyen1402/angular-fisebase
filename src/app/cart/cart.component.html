@@ -1,0 +1,21 @@
+<button (click)="removeCart()">testRemoveCart</button>
+<app-navbar></app-navbar>
+<h3>Shopping Cart</h3>
+<div *ngIf="productArray.length !== 0">
+  <table id = customers>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Price/Item</th>
+      <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let item of productArray, let i = index">
+      <td>{{item.name}}</td>
+      <td><a href="/detail/{{item.id}}"><img src={{item.img}} alt={{item.name}} width="100px" height="100px"></a></td>
+      <td>{{item.price}}</td>
+      <td><input type="number" value="{{item.sl}}"></td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="productArray.length === 0">Add something to your cart</div>
